@@ -1,8 +1,101 @@
 body{
-    background-image: url(/images/addsquad.jpg);
+    background-image: url(/images/beachy.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 30px;
+    padding-top: 10px;
+
+}
+
+
+.custom-nav{
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+
+    border: none;
+    list-style: none;
+}
+
+#logo{
+    font-size: 36px;
+    font-weight: bold;
+    color: #E08C76;
+}
+
+.header-container-fluid{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+a{
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: 400;
+    opacity: 70%;
+}
+
+a:hover{
+    opacity: 100%;
+}
+
+.page-header h1{
+    color: white;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+#content{
+    width: 100%;
+    background-color: white;
+    padding-top: 100px;
+    padding-left: 170px;
+    padding-right: 170px;
+    height: 700px;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.jumbotron{
+   height: 100%;
+   text-align: center;
+  margin: 50px 50px 50px 50px !important;
+  box-shadow: 10px 10px 5px #888888;
+  background: #fff;
+}
+h1{
+  font-family: tahoma;
+  color:#2980b9;
+  text-align: center;
+}
+hr{
+  width: 5%;
+  border: 1px solid black;
+  margin-bottom:10px;
+}
+
+p{
+  font-size: 19.5px;
+  text-align: justify;
+}
+
+
+
+.card-img-top{
+height: 300px
+object-fit: center;
+}
+
+.img-jumbotron{
+  height: 100px;
+  object-fit: center;
+}
+
+.t-2{
+font-size: 12px
 }
 
 
