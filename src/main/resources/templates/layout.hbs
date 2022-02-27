@@ -1,0 +1,66 @@
+{{#block "footer"}}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>{{#block "title"}}Heros{{/block}}</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel='stylesheet' href='/css/index.css'>
+    </head>
+    <body>
+{{/block}}
+
+<div class="header-container-fluid">
+    <p id="logo">Heroes Squad</p>
+    <ul class="custom-nav">
+        <li role="presentation" class="active"><a href="/">Home</a></li>
+        <li role="presentation"><a href="/list">All Squads</a></li>
+        <li role="presentation"><a href="/squads">New Squad</a></li>
+        <li role="presentation"><a href="/heroes">New Hero</a></li>
+    </ul>
+</div>
+{{!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-black"> --}}
+{{!--   <a class="navbar-brand" href="#"> --}}
+{{!--     <img src="/images/logo.png" width="100" height="50" alt=""> --}}
+{{!--   </a> --}}
+{{!--   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> --}}
+{{!--     <span class="navbar-toggler-icon"></span> --}}
+{{!--   </button> --}}
+
+{{!--   <div class="collapse navbar-collapse" id="navbarTogglerDemo02"> --}}
+{{!--     <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> --}}
+{{!--       <li class="nav-item active"> --}}
+{{!--         <a class="nav-link" role="presentation" class="active" href="/">Home <span class="sr-only"></span></a> --}}
+{{!--       </li> --}}
+{{!--       <li class="nav-item"> --}}
+{{!--         <a class="nav-link" role="presentation" href="/squads/list" href="#">All Squads</a> --}}
+{{!--       </li> --}}
+{{!--       <li class="nav-item"> --}}
+{{!--               <a class="nav-link" role="presentation" href="/squads" href="#">New Squads</a> --}}
+{{!--       </li> --}}
+{{!--   <li class="nav-item"> --}}
+{{!--               <a class="nav-link" role="presentation" href="/heroes" href="#">New Hero</a> --}}
+{{!--       </li> --}}
+{{!--     </ul> --}}
+{{!--   </div> --}}
+{{!-- </nav> --}}
+<div class="container-fluid">
+    <!--begin main template-->
+   <div class="col-xs-12 jumbotron p-3 rounded-3 text-center">
+       <h1>Hero Squad!</h1>
+      <hr/>
+
+    </div>
+    <div class="col-md-12" id="content">
+        {{#block "content"}}
+        {{/block}}
+
+    </div>
+
+
+</div>
+<!--end main template-->
+{{#block "footer"}}
+    </body>
+    </html>
+{{/block}}
