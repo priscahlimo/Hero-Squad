@@ -3,6 +3,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 
+import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
@@ -30,6 +31,15 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "squad.hbs");
         },new HandlebarsTemplateEngine());
+
+        post("/squads/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String name = request.queryParams("name");
+            int maxSize = Integer.parseInt(request.queryParams("maxSize"));
+            String cause = request.queryParams("cause");
+            Squad squad = new Squad(name,maxSize,cause);
+            return new ModelAndView(model, "successSquad.hbs");
+        }, new HandlebarsTemplateEngine());
 
     }
 
