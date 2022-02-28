@@ -13,13 +13,32 @@ public class SquadTest {
     }
 
     public Squad setupSquad(){
-        return new Squad("flash");
+        return new Squad("flash", 7,"restore");
     }
 
     @Test
     public void NewPostObjectGetsCorrectlyCreated_true() throws Exception {
-        Squad squad = new Squad("flash");
+        Squad squad = new Squad("flash",7,"restore");
         assertEquals(true, squad instanceof Squad);
+    }
+
+
+    @Test
+    public void SquadInstantiatesWithMaxSize_true() {
+        Squad squad = setupSquad();
+        assertEquals(7, squad.getMaxSize());
+    }
+
+    @Test
+    public void SquadInstantiatesWithName_true() {
+        Squad squad = setupSquad();
+        assertEquals("flash", squad.getName());
+    }
+
+    @Test
+    public void SquadInstantiatesWithCause_true() {
+        Squad squad = setupSquad();
+        assertEquals("restore", squad.getCause());
     }
 
     @After
