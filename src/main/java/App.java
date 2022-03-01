@@ -3,6 +3,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 
+import models.Hero;
 import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -47,6 +48,18 @@ public class App {
             model.put("squads", squads);
 
             return new ModelAndView(model, "squadList.hbs");
+        }, new HandlebarsTemplateEngine());
+
+//        heroes part
+
+        get("/heroes", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Hero> foundHero = Hero.getAll();
+            ArrayList<Squad> allSquads = Squad.getAll();
+            model.put("heroes",foundHero);
+            model.put("squads", allSquads);
+
+            return new ModelAndView(model, "Heroes.hbs");
         }, new HandlebarsTemplateEngine());
 
     }
