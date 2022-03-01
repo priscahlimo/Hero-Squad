@@ -62,6 +62,31 @@ public class App {
             return new ModelAndView(model, "Heroes.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/heroes/list", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Hero> heroes = Hero.getAll();
+
+            model.put("heroes", heroes);
+            return new ModelAndView(model, "totalheros.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("/heroes/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String name = request.queryParams("name");
+            int age = Integer.parseInt(request.queryParams("age"));
+            String specialPower = request.queryParams("special-power");
+            String weakness = request.queryParams("weakness");
+
+            model.put("name", name);
+            model.put("age", age);
+            model.put("specialPower", specialPower);
+            model.put("weakness", weakness);
+
+
+
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
     }
 
 }
