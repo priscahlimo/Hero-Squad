@@ -41,6 +41,14 @@ public class App {
             return new ModelAndView(model, "successSquad.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/squads/list", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            ArrayList<Squad> squads = Squad.getAll();
+            model.put("squads", squads);
+
+            return new ModelAndView(model, "squadList.hbs");
+        }, new HandlebarsTemplateEngine());
+
     }
 
 }

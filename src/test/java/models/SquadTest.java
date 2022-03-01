@@ -35,6 +35,7 @@ public class SquadTest {
         assertEquals("flash", squad.getName());
     }
 
+
     @Test
     public void SquadInstantiatesWithCause_true() {
         Squad squad = setupSquad();

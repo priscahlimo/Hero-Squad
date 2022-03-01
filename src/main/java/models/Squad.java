@@ -1,11 +1,13 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Squad {
     private String name;
-    private int maxSize;
+    private final int maxSize;
     private String cause;
+    private static final ArrayList<Hero> mHeroes = new ArrayList<Hero>();
     private static ArrayList<Squad> instance = new ArrayList<Squad>();
     private int id;
 
@@ -38,8 +40,25 @@ public class Squad {
         return instance;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public List<Hero> getHeroes() {
+        return mHeroes;
     }
+
+    public void setHeroes(Hero hero) {
+        mHeroes.add(hero);
+    }
+
+
+    public boolean doesHeroExist(Hero hero) {
+        int counter = 0;
+        for (Hero mHero : mHeroes) {
+            if (mHero.getName().equals(hero.getName())) {
+                counter++;
+            }
+        }
+
+        return counter != 1;
+    }
+
 
 }
